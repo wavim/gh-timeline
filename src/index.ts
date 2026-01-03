@@ -24,17 +24,17 @@ async function render(user: string) {
     for (const repo of repos.data as Record<"name" | "description" | "created_at" | "updated_at", string>[]) {
       items.push({ content: repo.name, title: repo.description, start: repo.created_at, end: repo.updated_at });
     }
+
+    timeline = new Timeline(frame, items, {
+      orientation: items.length > 10 ? "both" : "bottom",
+      selectable: false,
+      showCurrentTime: false,
+      zoomKey: "shiftKey",
+    });
+    image.hidden = false;
   } catch {
     /* empty */
   }
-
-  timeline = new Timeline(frame, items, {
-    orientation: items.length > 10 ? "both" : "bottom",
-    selectable: false,
-    showCurrentTime: false,
-    zoomKey: "shiftKey",
-  });
-  image.hidden = false;
 }
 
 input.onchange = () => {
