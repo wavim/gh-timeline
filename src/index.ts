@@ -8,7 +8,11 @@ const frame = document.getElementById("frame") as HTMLDivElement;
 let timeline: Timeline;
 
 async function render(user: string) {
-  timeline?.destroy();
+  try {
+    timeline?.destroy();
+  } catch {
+    image.hidden = true;
+  }
   const items: DataItemCollectionType = [];
 
   try {
@@ -33,7 +37,7 @@ async function render(user: string) {
     });
     image.hidden = false;
   } catch {
-    /* empty */
+    image.hidden = true;
   }
 }
 
