@@ -1,0 +1,56 @@
+<!doctype html>
+<html class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>wavim · GitHub Timeline</title>
+    <link
+      rel="stylesheet"
+      href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/vis-timeline@latest/styles/vis-timeline-graph2d.min.css" />
+    <link
+      rel="icon"
+      href="https://avatars.githubusercontent.com/u/156987370" />
+  </head>
+  <body class="flex flex-col h-full min-h-dvh items-center">
+    <main class="flex flex-col items-center mt-12 gap-4">
+      <div class="flex flex-col justify-center gap-8 px-16">
+        <label class="font-main flex flex-col items-center gap-3 text-xl">
+          <span>GitHub User</span>
+          <input
+            id="input"
+            autofocus
+            autocorrect="off"
+            autocomplete="off"
+            spellcheck="false"
+            class="w-56 rounded-lg border p-2 text-center" />
+        </label>
+      </div>
+      <img
+        id="image"
+        alt="GitHub Avatar"
+        class="h-40"
+        hidden />
+      <div
+        id="frame"
+        class="w-[calc(100dvw-4rem)]"></div>
+    </main>
+    <div class="flex-1"></div>
+    <footer class="self-start px-8 py-6 font-main flex flex-col gap-2">
+      <p class="text-sm">Zoom With Shift+Scroll</p>
+      <a
+        target="_blank"
+        href="https://github.com/wavim"
+        class="text-sm">
+        wavim@GitHub 2026
+      </a>
+    </footer>
+    <script
+      type="module"
+      src="src/index.ts"></script>
+  </body>
+</html>
